@@ -28,10 +28,10 @@ module "lambda" {
   
   routes = {
     parents = {
-      enrollments = ["POST", "GET"]
+      enrollments = ["POST", "GET", "OPTIONS"]
     },
     children = {
-      "enrollments/{id}" = ["GET", "PUT", "DELETE"]
+      "enrollments/{id}" = ["GET", "PUT", "DELETE", "OPTIONS"]
     }
   }
 }
