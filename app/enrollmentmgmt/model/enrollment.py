@@ -17,7 +17,7 @@ class EnrollmentCreate(EnrollmentBase):
 
 class Enrollment(EnrollmentBase):  
     """Modelo completo com ID"""
-    id: Optional[int] = Field(None, description="ID único (gerado automaticamente)")
+    id: str = Field(default="", description="UUID único (gerado automaticamente)")
 
     class Config:
         from_attributes = True
