@@ -4,9 +4,9 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 class EnrollmentBase(BaseModel):
-    athlete_id: int = Field(..., description="ID do atleta matriculado")
+    athlete_id: str = Field(..., description="UUID do atleta matriculado")
     athlete_name: Optional[str] = Field(default="", description="Nome do atleta matriculado")
-    class_id: int = Field(..., description="ID da aula")
+    class_id: str = Field(..., description="UUID da aula")
     enrollment_date: date = Field(..., description="Data de inscrição na aula")
     is_active: bool = Field(default=True, description="Status da matrícula (ativo/inativo)")
     notes: Optional[str] = Field(default="", description="Observações sobre a matrícula")
